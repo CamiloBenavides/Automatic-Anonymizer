@@ -2,7 +2,6 @@ package gui;
 
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
-import java.awt.Color;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -52,9 +51,8 @@ public class Anonimizador extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             // handle exception
         }
-
+        
         initComponents();
-        getContentPane().setBackground(Color.WHITE);
         jTabbedPane1.setVisible(false);
         jButton5.setVisible(false);
         jPanel1.setVisible(false);
@@ -88,7 +86,6 @@ public class Anonimizador extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jButton5 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Open = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -98,14 +95,9 @@ public class Anonimizador extends javax.swing.JFrame {
         jFileChooser1.setDialogTitle("Este es mi dialogo abierto");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-        setForeground(java.awt.Color.white);
         setMinimumSize(new java.awt.Dimension(649, 650));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Candara", 1, 36)); // NOI18N
-        jLabel1.setText("Loaded Data");
+        jLabel1.setText("Texto Cargado");
 
         jScrollPane3.setBackground(new java.awt.Color(100, 100, 100));
 
@@ -132,13 +124,9 @@ public class Anonimizador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jScrollPane1.setMinimumSize(new java.awt.Dimension(100, 20));
 
@@ -158,25 +146,17 @@ public class Anonimizador extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
-        jTabbedPane1.addTab("Tree of Taxonomy", jPanel3);
+        jTabbedPane1.addTab("Arbol de Taxonomia", jPanel3);
 
         jButton5.setText("Boton Entrega II");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
-        jLabel2.setFont(new java.awt.Font("Candara", 1, 36)); // NOI18N
-        jLabel2.setText("Please load the csv file.");
+        Open.setText("Archivo");
 
-        Open.setText("File");
-
-        jMenuItem1.setText("Open");
+        jMenuItem1.setText("Abrir");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -184,7 +164,7 @@ public class Anonimizador extends javax.swing.JFrame {
         });
         Open.add(jMenuItem1);
 
-        jMenuItem2.setText("Exit");
+        jMenuItem2.setText("Salir");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -194,7 +174,7 @@ public class Anonimizador extends javax.swing.JFrame {
 
         jMenuBar1.add(Open);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Editar");
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -204,44 +184,31 @@ public class Anonimizador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel2)
-                .addGap(97, 97, 97)
+                .addGap(311, 311, 311)
                 .addComponent(jButton5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jTabbedPane1))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(5, 5, 5))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addGap(18, 18, 18)))
+                .addComponent(jButton5)
+                .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * This method is in charge of executing the load of the initial CSV
-     *
-     * @param evt The event launched on the GUI
-     * @Author Camilo Benavides
-     */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         File workingDirectory = new File(System.getProperty("user.dir"));
         jFileChooser1.setCurrentDirectory(workingDirectory);
@@ -271,30 +238,11 @@ public class Anonimizador extends javax.swing.JFrame {
         } else {
             System.out.println("File access cancelled by user.");
         }
-
-        jLabel2.setVisible(false);
-        jButton5.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-    
-    /**
-     * This method is in charge of executing the exit of the program
-     *
-     * @param evt The event launched on the GUI
-     * @Author Camilo Benavides
-     */
+
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-    
-    /**
-     * This method is in charge of executing the whole anonymization process 
-     *
-     * @param evt The event launched on the GUI
-     * @Author TBD
-     */
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * This method load the Data that comes from the initial loaded CSV file
@@ -922,7 +870,7 @@ public class Anonimizador extends javax.swing.JFrame {
      * This method contains all the logic for parsing the Taxonomy File
      *
      * @param filePath the path of the Taxonomy File
-     * @return
+     * @return 
      * @Author David Villamizar
      */
     public TaxoTree<String> parseTaxonomyFile(String filePath) {
@@ -1116,7 +1064,6 @@ public class Anonimizador extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
