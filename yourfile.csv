@@ -1,0 +1,101 @@
+CustomerKey,GeographyKey,FirstName,MiddleName,LastName,BirthDate,MaritalStatus,Gender,EmailAddress,YearlyIncome,TotalChildren,NumberChildrenAtHome,EnglishEducation,EnglishOccupation,HouseOwnerFlag,NumberCarsOwned,DateFirstPurchase,CommuteDistance,Region,Age ,BikeBuyer 
+11000,26,Jon,V,Yang,4/8/66,M,M,jon24@adventure-works.com,90000,2,0,Bachelors,Professional,1,0,7/22/05,1-2 Miles,Pacific,46,1
+11001,37,Eugene,L,Huang,5/14/65,S,,eugene10@adventure-works.com,60000,3,3,Bachelors,Professional,0,1,7/18/05,0-1 Miles,Pacific,47,1
+11002,31,Ruben, ,Torres,8/12/65,M,M,ruben35@adventure-works.com,60000,3,3,Bachelors,Professional,1,1,7/10/05,2-5 Miles,Pacific,47,1
+11003,11,Christy, ,Zhu,2/15/68,S,F,christy12@adventure-works.com,,0,0,Bachelors,Professional,0,1,7/1/05,5-10 Miles,Pacific,44,1
+11004,19,Elizabeth, ,Johnson,8/8/68,S,F,elizabeth5@adventure-works.com,80000,5,5,Bachelors,Professional,1,4,7/26/05,1-2 Miles,Pacific,44,1
+11005,22,Julio, ,Ruiz,8/5/65,S,M,julio1@adventure-works.com,70000,0,0,Bachelors,Professional,1,1,7/2/05,5-10 Miles,Pacific,47,1
+11006,8,Janet,G,Alvarez,12/6/65,S,F,janet9@adventure-works.com,70000,0,0,Bachelors,Professional,,1,7/27/05,5-10 Miles,Pacific,46,1
+11007,40,Marco, ,Mehta,5/9/64,M,M,marco14@adventure-works.com,60000,3,3,Bachelors,Professional,1,2,7/12/05,0-1 Miles,Pacific,48,1
+11008,32,Rob, ,Verhoff,7/7/64,S,F,rob4@adventure-works.com,60000,4,4,Bachelors,Professional,1,3,7/28/05,10+ Miles,Pacific,48,1
+11009,25,Shannon,C,Carlson,4/1/64,S,M,shannon38@adventure-works.com,70000,0,0,Bachelors,Professional,0,,7/30/05,5-10 Miles,Pacific,48,1
+11010,22,Jacquelyn,C,Suarez,2/6/64,S,F,jacquelyn20@adventure-works.com,70000,0,0,Bachelors,Professional,0,1,7/17/05,5-10 Miles,Pacific,48,1
+11011,22,Curtis, ,Lu,11/4/63,M,M,curtis9@adventure-works.com,60000,4,4,Bachelors,Professional,1,4,7/2/05,10+ Miles,Pacific,49,1
+11012,611,Lauren,M,Walker,1/18/68,M,F,lauren41@adventure-works.com,100000,2,0,Bachelors,Management,1,2,9/17/07,1-2 Miles,North America,44,0
+11013,543,Ian,M,Jenkins,8/6/68,M,M,ian47@adventure-works.com,,2,0,Bachelors,Management,1,3,10/15/07,0-1 Miles,North America,44,0
+11014,634,Sydney, ,Bennett,5/9/68,S,F,sydney23@adventure-works.com,100000,3,0,Bachelors,Management,0,3,9/24/07,1-2 Miles,North America,44,0
+11015,301,Chloe, ,Young,2/27/79,S,,chloe23@adventure-works.com,30000,0,0,Partial College,Skilled Manual,0,1,7/22/07,5-10 Miles,North America,33,1
+11016,329,Wyatt,L,Hill,4/28/79,M,M,wyatt32@adventure-works.com,30000,0,0,Partial College,Skilled Manual,1,1,8/13/07,5-10 Miles,North America,33,1
+11017,39,Shannon, ,Wang,6/26/44,S,F,shannon1@adventure-works.com,20000,4,0,High School,Skilled Manual,1,2,7/15/05,5-10 Miles,Pacific,68,1
+11018,32,Clarence,D,Rai,10/9/44,S,,clarence32@adventure-works.com,30000,,0,Partial College,Clerical,1,,7/20/05,5-10 Miles,Pacific,68,1
+11019,52,Luke,L,Lal,3/7/78,S,M,luke18@adventure-works.com,40000,0,0,High School,Skilled Manual,0,2,8/16/07,5-10 Miles,North America,34,0
+11020,53,Jordan,C,King,9/20/78,S,M,jordan73@adventure-works.com,40000,0,0,High School,Skilled Manual,0,2,7/2/07,1-2 Miles,North America,34,1
+11021,536,Destiny, ,Wilson,9/3/78,S,F,destiny7@adventure-works.com,,0,0,Partial College,Skilled Manual,0,1,7/27/07,1-2 Miles,North America,34,1
+11022,609,Ethan,G,Zhang,10/12/78,M,M,ethan20@adventure-works.com,40000,0,0,Partial College,Skilled Manual,1,1,7/24/07,5-10 Miles,North America,34,1
+11023,298,Seth,M,Edwards,10/11/78,M,M,seth46@adventure-works.com,40000,0,0,Partial College,Skilled Manual,1,1,8/21/07,1-2 Miles,North America,34,0
+11024,311,Russell, ,Xie,9/17/78,M,M,russell7@adventure-works.com,,0,0,Partial College,Skilled Manual,1,2,12/29/07,5-10 Miles,North America,34,0
+11025,24,Alejandro, ,Beck,12/23/45,M,M,alejandro45@adventure-works.com,10000,2,1,Partial High School,Clerical,1,2,7/9/05,1-2 Miles,Pacific,66,1
+11026,4,Harold, ,Sai,4/3/46,S,M,harold3@adventure-works.com,30000000,10,0,Partial College,Clerical,0,2,7/26/05,1-2 Miles,Pacific,66,1
+11027,40,Jessie,R,Zhao,12/7/46,M,M,jessie16@adventure-works.com,30000,2,0,Partial College,Clerical,1,2,7/19/05,5-10 Miles,Pacific,65,1
+11028,17,Jill, ,Jimenez,4/11/46,M,F,jill13@adventure-works.com,30000,2,0,Partial College,Clerical,1,2,7/29/05,1-2 Miles,Pacific,66,1
+11029,32,Jimmy,L,Moreno,12/21/46,M,M,jimmy9@adventure-works.com,30000,2,0,Partial College,Clerical,1,2,7/22/05,1-2 Miles,Pacific,65,1
+11030,28,Bethany,G,Yuan,2/22/47,M,F,bethany10@adventure-works.com,10000,2,1,Partial High School,Clerical,1,2,8/8/05,1-2 Miles,Pacific,65,1
+11031,8,Theresa,G,Ramos,8/22/47,M,F,theresa13@adventure-works.com,,4,0,High School,Skilled Manual,1,2,8/4/05,1-2 Miles,Pacific,65,1
+11032,35,Denise, ,Stone,6/11/47,M,F,denise10@adventure-works.com,20000,4,0,High School,Skilled Manual,1,2,8/21/05,1-2 Miles,Pacific,65,1
+11033,9,Jaime, ,Nath,9/23/47,M,M,jaime41@adventure-works.com,20000,4,0,High School,Skilled Manual,1,2,8/18/05,5-10 Miles,Pacific,65,1
+11034,12,Ebony, ,Gonzalez,6/19/47,M,F,ebony19@adventure-works.com,20000,4,0,High School,Skilled Manual,1,2,8/4/05,5-10 Miles,Pacific,65,1
+11035,33,Wendy, ,Dominguez,2/24/48,M,F,wendy12@adventure-works.com,10000,2,1,Partial High School,Clerical,1,2,8/9/05,1-2 Miles,Pacific,64,1
+11036,343,Jennifer,C,Russell,12/18/78,M,F,jennifer93@adventure-works.com,60000,0,0,Partial College,Skilled Manual,1,2,7/26/07,1-2 Miles,North America,33,1
+11037,49,Chloe,M,Garcia,11/27/77,S,F,chloe27@adventure-works.com,40000,0,0,Partial High School,Clerical,0,2,7/24/07,5-10 Miles,North America,34,1
+11038,6,Diana,F,Hernandez,3/23/48,M,F,diana2@adventure-works.com,10000,2,1,Partial High School,Clerical,1,2,8/10/05,5-10 Miles,Pacific,64,1
+11039,19,Marc,J,Martin,12/17/48,M,M,marc3@adventure-works.com,,3,0,Partial College,Clerical,1,2,8/10/05,5-10 Miles,Pacific,63,1
+11040,642,Jesse, ,Murphy,8/1/77,M,M,jesse15@adventure-works.com,30000,0,0,Partial College,Skilled Manual,1,2,10/5/07,1-2 Miles,North America,35,1
+11041,325,Amanda,M,Carter,10/16/77,M,F,amanda53@adventure-works.com,60000,0,0,Partial College,Skilled Manual,1,2,7/18/07,1-2 Miles,North America,35,1
+11042,338,Megan,J,Sanchez,6/13/77,M,F,megan28@adventure-works.com,70000,0,0,Partial College,Skilled Manual,1,2,7/25/07,0-1 Miles,North America,35,1
+11043,325,Nathan,M,Simmons,2/24/76,M,M,nathan11@adventure-works.com,60000,0,0,Partial College,Skilled Manual,1,2,11/9/07,5-10 Miles,North America,36,0
+11044,25,Adam,L,Flores,5/24/49,M,M,adam10@adventure-works.com,20000,2,1,Partial High School,Clerical,1,2,8/31/05,1-2 Miles,Pacific,63,1
+11045,8,Leonard,G,Nara,5/19/50,S,M,leonard18@adventure-works.com,30000,3,0,High School,Skilled Manual,0,2,10/12/07,1-2 Miles,Pacific,62,0
+11046,6,Christine, ,Yuan,3/22/50,M,F,christine4@adventure-works.com,30000,3,0,High School,Skilled Manual,1,2,8/9/05,5-10 Miles,Pacific,62,1
+11047,34,Jaclyn,D,Lu,2/27/50,M,F,jaclyn12@adventure-works.com,30000,3,0,High School,Skilled Manual,0,2,8/6/05,1-2 Miles,Pacific,62,1
+11048,39,Jeremy, ,Powell,11/22/50,M,M,jeremy26@adventure-works.com,30000,3,0,High School,Skilled Manual,1,2,8/13/05,5-10 Miles,Pacific,61,1
+11049,307,Carol,C,Rai,7/18/80,S,F,carol8@adventure-works.com,,0,0,Partial High School,Clerical,1,2,9/10/07,5-10 Miles,North America,32,0
+11050,31,Alan, ,Zheng,9/7/51,M,M,alan23@adventure-works.com,30000,3,0,High School,Skilled Manual,1,2,8/23/05,5-10 Miles,Pacific,61,1
+11051,21,Daniel, ,Johnson,8/4/51,S,,daniel18@adventure-works.com,30000,3,0,High School,Skilled Manual,0,2,7/1/08,1-2 Miles,Pacific,61,0
+11052,8,Heidi, ,Lopez,8/7/51,S,F,heidi19@adventure-works.com,40000,2,0,Partial College,Clerical,0,2,8/20/05,5-10 Miles,Pacific,61,1
+11053,359,Ana,E,Price,8/20/80,M,F,ana0@adventure-works.com,60000,0,0,Partial College,Skilled Manual,0,2,7/21/07,1-2 Miles,North America,32,1
+11054,34,Deanna, ,Munoz,3/10/52,M,F,deanna33@adventure-works.com,40000,2,0,Partial College,Skilled Manual,1,2,8/6/05,5-10 Miles,Pacific,60,1
+11055,22,Gilbert, ,Raje,3/5/52,M,M,gilbert35@adventure-works.com,40000,2,0,Partial College,Skilled Manual,1,2,8/3/05,5-10 Miles,Pacific,60,1
+11056,10,Michele,L,Nath,4/3/53,M,F,michele19@adventure-works.com,40000,3,0,Partial College,Skilled Manual,1,2,8/29/05,5-10 Miles,Pacific,59,1
+11057,5,Carl,J,Andersen,10/12/53,M,M,carl12@adventure-works.com,70000,2,0,Graduate Degree,Management,1,2,8/25/05,1-2 Miles,Pacific,59,1
+11058,29,Marc, ,Diaz,4/27/54,M,M,marc6@adventure-works.com,80000,2,0,Partial College,Skilled Manual,1,2,9/9/05,1-2 Miles,Pacific,58,1
+11059,27,Ashlee,J,Andersen,4/1/54,S,F,ashlee19@adventure-works.com,80000,2,0,Partial College,Skilled Manual,1,2,8/22/07,5-10 Miles,Pacific,,0
+11060,40,Jon,L,Zhou,3/17/54,M,M,jon28@adventure-works.com,80000,2,0,Partial College,Skilled Manual,1,2,9/19/05,5-10 Miles,Pacific,58,1
+11061,23,Todd,M,Gao,2/27/54,M,M,todd14@adventure-works.com,80000,2,0,Partial College,Skilled Manual,1,2,9/13/05,5-10 Miles,Pacific,58,1
+11062,547,Noah,D,Powell,9/2/75,M,M,noah5@adventure-works.com,40000,0,0,High School,Skilled Manual,1,2,7/11/07,5-10 Miles,North America,37,1
+11063,634,Angela, ,Murphy,4/7/75,S,F,angela41@adventure-works.com,40000,0,0,High School,Skilled Manual,1,2,7/16/07,5-10 Miles,North America,,1
+11064,315,Chase, ,Reed,12/7/75,M,M,chase21@adventure-works.com,40000,0,0,High School,Skilled Manual,1,2,7/29/07,5-10 Miles,North America,36,1
+11065,331,Jessica, ,Henderson,10/9/73,M,F,jessica29@adventure-works.com,60000,0,0,Partial College,Skilled Manual,0,2,8/14/07,1-2 Miles,North America,39,0
+11066,543,Grace,T,Butler,11/27/73,M,F,grace62@adventure-works.com,70000,0,0,Partial College,Professional,1,2,12/2/07,5-10 Miles,North America,38,0
+11067,632,Caleb,F,Carter,9/25/76,S,M,caleb40@adventure-works.com,60000,0,0,Partial College,Professional,1,2,2/19/08,5-10 Miles,North America,36,0
+11068,40,Tiffany, ,Liang,9/23/55,S,F,tiffany17@adventure-works.com,80000,2,0,High School,Skilled Manual,1,2,11/1/07,5-10 Miles,Pacific,57,0
+11069,23,Carolyn, ,Navarro,9/21/55,S,F,carolyn30@adventure-works.com,80000,2,0,High School,Skilled Manual,0,2,10/18/05,1-2 Miles,Pacific,57,1
+11070,39,Willie,T,Raji,4/5/55,M,M,willie40@adventure-works.com,80000,2,0,High School,Skilled Manual,1,2,10/29/05,5-10 Miles,Pacific,57,1
+11071,24,Linda, ,Serrano,6/26/55,S,F,linda31@adventure-works.com,80000,2,0,High School,Skilled Manual,1,2,9/2/07,5-10 Miles,Pacific,57,0
+11072,17,Casey, ,Luo,2/6/55,S,F,casey6@adventure-works.com,80000,2,0,High School,Skilled Manual,0,2,10/1/05,1-2 Miles,Pacific,57,1
+11073,16,Amy, ,Ye,8/14/56,S,F,amy16@adventure-works.com,70000,2,0,High School,Skilled Manual,1,2,9/24/07,5-10 Miles,Pacific,56,0
+11074,28,Levi,A,Arun,8/28/56,S,M,levi6@adventure-works.com,70000,2,0,High School,Skilled Manual,1,2,9/24/07,5-10 Miles,Pacific,56,0
+11075,32,Felicia,L,Jimenez,11/16/57,S,F,felicia4@adventure-works.com,80000,2,0,High School,Professional,1,2,10/29/05,5-10 Miles,Pacific,54,1
+11076,19,Blake, ,Anderson,7/13/57,S,M,blake9@adventure-works.com,80000,2,0,High School,Professional,1,2,10/22/05,5-10 Miles,Pacific,55,1
+11077,36,Leah, ,Ye,9/19/57,S,F,leah7@adventure-works.com,80000,2,0,High School,Professional,0,2,10/16/05,1-2 Miles,Pacific,55,1
+11078,49,Gina,E,Martin,1/10/74,S,F,gina1@adventure-works.com,40000,0,0,High School,Professional,0,2,8/19/07,1-2 Miles,North America,38,0
+11079,34,Donald, ,Gonzalez,3/11/59,S,M,donald20@adventure-works.com,160000,0,0,Graduate Degree,Management,1,2,9/16/07,0-1 Miles,Pacific,53,0
+11080,30,Damien, ,Chander,7/17/59,M,M,damien32@adventure-works.com,170000,0,0,Graduate Degree,Management,1,2,10/11/05,0-1 Miles,Pacific,53,1
+11081,311,Savannah,C,Baker,7/24/66,M,F,savannah39@adventure-works.com,120000,2,2,Bachelors,Management,1,3,8/16/07,2-5 Miles,North America,46,0
+11082,322,Angela,L,Butler,8/4/66,S,F,angela17@adventure-works.com,130000,0,1,Graduate Degree,Management,0,3,7/26/07,1-2 Miles,North America,46,1
+11083,336,Alyssa,F,Cox,3/15/66,M,F,alyssa37@adventure-works.com,130000,0,1,Graduate Degree,Management,1,3,7/10/07,1-2 Miles,North America,46,1
+11084,543,Lucas, ,Phillips,9/12/57,S,M,lucas7@adventure-works.com,80000,2,0,Partial High School,Skilled Manual,0,2,7/8/07,1-2 Miles,North America,55,1
+11085,345,Emily, ,Johnson,7/19/57,S,F,emily1@adventure-works.com,60000,2,0,High School,Professional,0,2,6/8/08,5-10 Miles,North America,55,0
+11086,369,Ryan, ,Brown,12/23/57,M,M,ryan43@adventure-works.com,70000,2,1,Partial College,Professional,1,0,1/3/08,0-1 Miles,North America,54,0
+11087,307,Tamara,L,Liang,10/3/57,M,F,tamara6@adventure-works.com,70000,3,2,Partial College,Professional,0,0,8/29/07,0-1 Miles,North America,55,0
+11088,359,Hunter, ,Davis,11/25/57,M,M,hunter64@adventure-works.com,80000,2,1,Bachelors,Management,1,0,7/17/07,2-5 Miles,North America,54,1
+11089,337,Abigail,M,Price,2/5/57,S,F,abigail25@adventure-works.com,80000,2,1,Bachelors,Management,1,1,7/2/07,2-5 Miles,North America,55,1
+11090,338,Trevor, ,Bryant,12/17/57,S,M,trevor18@adventure-works.com,90000,2,0,Partial College,Professional,1,1,2/7/06,2-5 Miles,North America,54,1
+11091,50,Dalton, ,Perez,4/4/57,M,M,dalton37@adventure-works.com,90000,2,0,Partial College,Professional,1,1,8/2/07,5-10 Miles,North America,55,0
+11092,22,Cheryl,A,Diaz,5/6/67,M,F,cheryl4@adventure-works.com,90000,2,2,Bachelors,Professional,1,0,10/9/05,1-2 Miles,Pacific,45,1
+11093,19,Aimee,A,He,9/10/67,M,F,aimee13@adventure-works.com,100000,0,0,Graduate Degree,Management,1,0,10/8/05,0-1 Miles,Pacific,45,1
+11094,33,Cedric,W,Ma,4/1/62,S,M,cedric15@adventure-works.com,70000,1,0,Partial College,Skilled Manual,0,1,10/9/07,0-1 Miles,Pacific,50,0
+11095,13,Chad, ,Kumar,9/1/62,S,M,chad9@adventure-works.com,70000,1,0,Partial College,Skilled Manual,1,1,10/2/05,5-10 Miles,Pacific,50,1
+11096,12,Andr_s, ,Anand,8/10/62,M,M,andr_s18@adventure-works.com,60000,1,0,Bachelors,Professional,1,1,10/12/05,5-10 Miles,Pacific,50,1
+11097,40,Edwin,R,Nara,10/27/61,M,M,edwin39@adventure-works.com,60000,1,0,Partial College,Skilled Manual,1,1,10/5/05,5-10 Miles,Pacific,51,1
+11098,14,Mallory,S,Rubio,5/1/61,S,F,mallory7@adventure-works.com,60000,1,0,Partial College,Skilled Manual,0,1,8/15/07,0-1 Miles,Pacific,51,0
+11099,13,Adam, ,Ross,3/8/61,M,M,adam2@adventure-works.com,60000,1,0,Bachelors,Professional,1,1,10/8/05,0-1 Miles,Pacific,51,1
