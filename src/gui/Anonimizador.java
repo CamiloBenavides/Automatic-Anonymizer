@@ -180,8 +180,7 @@ public class Anonimizador extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(0, 0, 0))
+                    .addComponent(jLabel3)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5)
@@ -705,6 +704,19 @@ public class Anonimizador extends javax.swing.JFrame {
 		return att;
 	}
 
+        /**
+	 * Este método calcula el mejor número de clusters basado en la cantidad de filas de la tabla y el k esperado
+	 * @return int res con el mejor número de clusters
+	 * @author Jhonan Espejo
+	 */
+        public int bestNumberOfClusters(){           
+            int rowCount = tableModel.getRowCount();
+            int k = Integer.parseInt(jSpinner1.getModel().getValue().toString());
+            int res = rowCount/k;
+            res = (int) (res * 0.8);
+            return res;
+        }
+        
 	/**
 	 * This method contains all the logic of the filter four.
 	 *
@@ -712,7 +724,7 @@ public class Anonimizador extends javax.swing.JFrame {
 	 * @param name The name of the output CSV
 	 * @param nCl The number of Clusters
 	 * @throws java.lang.Exception
-	 * @author Camilo Benavides
+	 * @author Jhonan Espejo
 	 */
 	public void filterFourProcedure(List<String> cuasi, String name, int nCl) throws Exception {
 
