@@ -61,7 +61,7 @@ public class Anonimizador extends javax.swing.JFrame {
 		initComponents();
 		//getContentPane().setBackground(Color.WHITE);
 		jTabbedPane1.setVisible(false);
-		jButton5.setVisible(false);
+		//jButton5.setVisible(false);
 		jPanel1.setVisible(false);
 	}
 
@@ -156,6 +156,11 @@ public class Anonimizador extends javax.swing.JFrame {
         jTabbedPane1.addTab("Taxonomy", jPanel3);
 
         jButton5.setText("Anonimizar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Anonimización k");
 
@@ -305,6 +310,20 @@ public class Anonimizador extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 		// TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(calculateKAnonimity());
+        
+        
+        System.out.println(bestNumberOfClusters());
+            try {
+                filterFour(jTextField1.getText(), bestNumberOfClusters()+"");
+            } catch (Exception ex) {
+                Logger.getLogger(Anonimizador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        System.out.println(calculateKAnonimity());
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 	/**
 	 * This method load the Data that comes from the initial loaded CSV file.
@@ -529,7 +548,7 @@ public class Anonimizador extends javax.swing.JFrame {
 			}
 
 			try {
-				filterFourProcedure(clustering, "ioFiles/filter4.csv", Integer.parseInt(dataFilterFourI));
+				filterFourProcedure(clustering, "filter4.csv", Integer.parseInt(dataFilterFourI));
 			} catch (Exception ex) {
 
 				Logger.getLogger(Anonimizador.class.getName()).log(Level.SEVERE, null, ex);
@@ -767,12 +786,13 @@ public class Anonimizador extends javax.swing.JFrame {
 
 		i = 0;
 		while (csv_import.readRecord()) {
-
+                        System.out.println((centroids.instance(assignments[i])).numAttributes());
 			for (int k = 0; k < csv_import.getColumnCount(); k++) {
 				if (enteroEnLista(cuasi, k)) {
-					csvOutput.write((centroids.instance(assignments[i])).toString(k));
-					tableModel.setValueAt((centroids.instance(assignments[i])).toString(k), i, k);
-
+                                        String cen = (centroids.instance(assignments[i])).toString(k);
+                                        Object ob = cen;
+					csvOutput.write(cen);
+                                        this.data.get(i).set(k, ob);
 				} else {
 					csvOutput.write(csv_import.get(k));
 				}
@@ -805,6 +825,10 @@ public class Anonimizador extends javax.swing.JFrame {
 		}
 		return false;
 	}
+        
+        public void anonymizationWithClusters(){
+            //calculateKAnonimity
+        }
 
 	/**
 	 * This method contains all the logic to generate output CSV files.
@@ -889,23 +913,6 @@ public class Anonimizador extends javax.swing.JFrame {
 			return null;
 		}
 		return t;
-	}
-
-	/**
-	 * This method contains all the logic for parsing the Taxonomy File.
-	 *
-	 * @param cuasi The quasi-identifier indices
-	 * @param identificador the column name (identifier)
-	 * @return a boolean that check if the element exist or not
-	 * @author Jhonan Espejo
-	 */
-	public static boolean esta(List<String> cuasi, String identificador) {
-		for (String p : cuasi) {
-			if (p.trim().equalsIgnoreCase(identificador.trim())) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 
