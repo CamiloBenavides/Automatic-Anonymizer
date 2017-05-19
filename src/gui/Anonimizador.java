@@ -362,17 +362,17 @@ public class Anonimizador extends javax.swing.JFrame {
      * This method is in charge of executing the filter two - Generalizer based
      * on taxonomy
      *
-     * @param dataFilterTwo The Nominal Attributes
-     * @param dataFilterTwoI Nominal attribute to generalize
-     * @param dataFilterTwoII Level of generalization
-     * @param dataFilterTwoIII Taxonomy document
+     * @param nominalAttributes The Nominal Attributes
+     * @param attributesToGeneralize Nominal attribute to generalize
+     * @param generalizationLevel Level of generalization
+     * @param taxonomyFilePath Taxonomy document
      * @Author David Villamizar
      */
-    private void filterTwo(String dataFilterTwo, String dataFilterTwoI, String dataFilterTwoII, String dataFilterTwoIII) {
+    private void filterTwo(String nominalAttributes, String attributesToGeneralize, String generalizationLevel, String taxonomyFilePath) {
 
-        TaxoTree<String> t = parseTaxonomyFile(dataFilterTwoIII);
+        TaxoTree<String> t = parseTaxonomyFile(taxonomyFilePath);
         treeModel.setRoot(t);
-        String indexStr = dataFilterTwoI;
+        String indexStr = attributesToGeneralize;
 
         if (indexStr.isEmpty()) {
             System.out.println("Debe ponerse el índice del atribtuo a generalizar.");
@@ -389,7 +389,7 @@ public class Anonimizador extends javax.swing.JFrame {
             return;
         }
 
-        String nIndicesStr = dataFilterTwo;
+        String nIndicesStr = nominalAttributes;
         List<Integer> nIndices = new ArrayList<>();
         StringTokenizer st = new StringTokenizer(nIndicesStr, ",");
         try {
@@ -420,7 +420,7 @@ public class Anonimizador extends javax.swing.JFrame {
             return;
         }
 
-        String levelStr = dataFilterTwoII;
+        String levelStr = generalizationLevel;
         if (levelStr.isEmpty()) {
             System.out.println("Debe ponerse el nivel hasta el que se quiere generalizar.");
             return;
