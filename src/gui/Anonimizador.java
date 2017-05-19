@@ -97,6 +97,9 @@ public class Anonimizador extends javax.swing.JFrame {
         jSpinner1 = new javax.swing.JSpinner();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Open = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -166,7 +169,7 @@ public class Anonimizador extends javax.swing.JFrame {
 
         jSpinner1.setPreferredSize(new java.awt.Dimension(100, 26));
 
-        jLabel4.setText("Atributos Nominales");
+        jLabel4.setText("Atributos nominales");
 
         jTextField1.setPreferredSize(new java.awt.Dimension(300, 26));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -175,6 +178,22 @@ public class Anonimizador extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setText("Calcular");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jTextField3.setPreferredSize(new java.awt.Dimension(300, 26));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Atributos quasi-identificadores");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -182,13 +201,21 @@ public class Anonimizador extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 346, Short.MAX_VALUE)
+                        .addComponent(jButton5))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton6))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(0, 0, 0)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -199,9 +226,15 @@ public class Anonimizador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6))
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
                 .addContainerGap())
@@ -251,7 +284,7 @@ public class Anonimizador extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -324,6 +357,28 @@ public class Anonimizador extends javax.swing.JFrame {
             }
         System.out.println(calculateKAnonimity());
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        List<Integer> quasiIds = new ArrayList<>();
+		String quasis = jTextField3.getText();
+		StringTokenizer strt = new StringTokenizer(quasis);
+		while (strt.hasMoreTokens()) {
+			String token = strt.nextToken(",");
+			int id;
+			try {
+				id = Integer.parseInt(token);
+			} catch (NumberFormatException e) {
+				Logger.getLogger(Anonimizador.class.getName()).log(Level.ALL, null, e);
+				throw new RuntimeException("Los índices deben ser numéricos.");
+			}
+			quasiIds.add(id);
+		}
+		jSpinner1.setValue(calculateKAnonimity(quasiIds));
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
 	/**
 	 * This method load the Data that comes from the initial loaded CSV file.
@@ -1014,6 +1069,51 @@ public class Anonimizador extends javax.swing.JFrame {
 		}
 		return minK;
 	}
+	
+	/**
+	 * Calculates the minimim K anonimity currently fullfiled for the rows in
+	 * this.data, for given the quasi-identifiers.
+	 * 
+	 * @param quasiIds List of integers with the quasi-identifier indices.
+	 * @return the minimim K anonimity for this.data.
+	 */
+	private int calculateKAnonimity(List<Integer> quasiIds) {
+		int minK = Integer.MAX_VALUE;
+		BitSet visited = new BitSet(data.size());
+		for (int i = 0; i < data.size(); i++) {
+			if (!visited.get(i)) {
+				visited.set(i, true);
+				int currK = 1;
+				List<Object> row1 = new ArrayList<>();
+				for (int j = 0; j < quasiIds.size(); j++) {
+					row1.add(data.get(i).get(quasiIds.get(j)));
+				}
+				for (int j = i + 1; j < data.size(); j++) {
+					if (!visited.get(j)) {
+						List<Object> row2 = new ArrayList<>();
+						for (int k = 0; k < quasiIds.size(); k++) {
+							row2.add(data.get(j).get(quasiIds.get(k)));
+						}
+//						boolean isEqual = true;
+//						for (int k = 0; k < row1.size() && isEqual; k++) {
+//							if (!row1.get(k).equals(row2.get(k))) {
+//								isEqual = false;
+//							}
+//						}
+//						if (isEqual) {
+						if (row1.equals(row2)) {
+							currK++;
+							visited.set(j, true);
+						}
+					}
+				}
+				if (currK < minK) {
+					minK = currK;
+				}
+			}
+		}
+		return minK;
+	}
 
 	/**
 	 * Utility class for the JFileChooser, applys a filter that accepts only
@@ -1063,9 +1163,11 @@ public class Anonimizador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Open;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -1079,6 +1181,7 @@ public class Anonimizador extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }
