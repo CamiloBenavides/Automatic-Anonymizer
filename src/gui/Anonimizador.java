@@ -29,6 +29,10 @@ import weka.clusterers.SimpleKMeans;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils;
 import util.TaxoTree;
+import weka.core.Attribute;
+import weka.core.DenseInstance;
+import weka.filters.Filter;
+import weka.filters.unsupervised.attribute.RemoveType;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -165,11 +169,6 @@ public class Anonimizador extends javax.swing.JFrame {
         jTabbedPane1.addTab("Tree of Taxonomy", jPanel3);
 
         jButton5.setText("Boton Entrega II");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Candara", 1, 36)); // NOI18N
         jLabel2.setText("Please load the csv file.");
@@ -288,16 +287,6 @@ public class Anonimizador extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
     
-    /**
-     * This method is in charge of executing the whole anonymization process 
-     *
-     * @param evt The event launched on the GUI
-     * @Author TBD
-     */
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     /**
      * This method load the Data that comes from the initial loaded CSV file
      *
@@ -712,12 +701,20 @@ public class Anonimizador extends javax.swing.JFrame {
 
         kmeans.setPreserveInstancesOrder(true);
         kmeans.setNumClusters(nCl);
-
-        ConverterUtils.DataSource source = new ConverterUtils.DataSource("ioFiles/yourfile.csv");
+        
+        generateCSV(-1, "dateBeforeFilter4Temp.csv");
+        
+        ConverterUtils.DataSource source = new ConverterUtils.DataSource("dateBeforeFilter4Temp.csv");
         Instances data = source.getDataSet();
-
+        
+        
+        RemoveType af = new RemoveType();
+        af.setInputFormat(data);
+        data = Filter.useFilter(data, af);
+        
+        
         kmeans.buildClusterer(data);
-
+        
         int[] assignments = kmeans.getAssignments();
 
         int i = 0;
@@ -726,149 +723,54 @@ public class Anonimizador extends javax.swing.JFrame {
         boolean alreadyExists = new File(outputFile).exists();
 
         if (alreadyExists) {
-            File ficheroPunto4 = new File(outputFile);
-            ficheroPunto4.delete();
+                File ficheroPunto4 = new File(outputFile);
+                ficheroPunto4.delete();
         }
         CsvWriter csvOutput = new CsvWriter(new FileWriter(outputFile, true), ',');
-        csvOutput.write("CustomerKey");
-        csvOutput.write("GeographyKey");
-        csvOutput.write("FirstName");
-        csvOutput.write("MiddleName");
-        csvOutput.write("LastName");
-        csvOutput.write("BirthDate");
-        csvOutput.write("MaritalStatus");
-        csvOutput.write("Gender");
-        csvOutput.write("EmailAddress");
-        csvOutput.write("YearlyIncome");
-        csvOutput.write("TotalChildren");
-        csvOutput.write("NumberChildrenAtHome");
-        csvOutput.write("EnglishEducation");
-        csvOutput.write("EnglishOccupation");
-        csvOutput.write("HouseOwnerFlag");
-        csvOutput.write("NumberCarsOwned");
-        csvOutput.write("DateFirstPurchase");
-        csvOutput.write("CommuteDistance");
-        csvOutput.write("Region");
-        csvOutput.write("Age ");
-        csvOutput.write("BikeBuyer ");
+        CsvReader csv_import = new CsvReader("dateBeforeFilter4Temp.csv");
+
+        csv_import.readRecord();
+        for(int k = 0; k < csv_import.getColumnCount(); k++){
+            csvOutput.write(csv_import.get(k));
+        }
         csvOutput.endRecord();
 
-        CsvReader csv_import = new CsvReader("ioFiles/yourfile.csv");
-        csv_import.readHeaders();
+        i = 0;
         while (csv_import.readRecord()) {
-            if (esta(cuasi, "CustomerKey")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(0));
-            } else {
-                csvOutput.write(csv_import.get(0));
-            }
-            if (esta(cuasi, "GeographyKey")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(1));
-            } else {
-                csvOutput.write(csv_import.get(1));
-            }
-            if (esta(cuasi, "FirstName")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(2));
-            } else {
-                csvOutput.write(csv_import.get(2));
-            }
-            if (esta(cuasi, "MiddleName")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(3));
-            } else {
-                csvOutput.write(csv_import.get(3));
-            }
-            if (esta(cuasi, "LastName")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(4));
-            } else {
-                csvOutput.write(csv_import.get(4));
-            }
-            if (esta(cuasi, "BirthDate")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(5));
-            } else {
-                csvOutput.write(csv_import.get(5));
-            }
-            if (esta(cuasi, "MaritalStatus")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(6));
-            } else {
-                csvOutput.write(csv_import.get(6));
-            }
-            if (esta(cuasi, "Gender")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(7));
-            } else {
-                csvOutput.write(csv_import.get(7));
-            }
-            if (esta(cuasi, "EmailAddress")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(8));
-            } else {
-                csvOutput.write(csv_import.get(8));
-            }
-            if (esta(cuasi, "YearlyIncome")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(9));
-            } else {
-                csvOutput.write(csv_import.get(9));
-            }
-            if (esta(cuasi, "TotalChildren")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(10));
-            } else {
-                csvOutput.write(csv_import.get(10));
-            }
-            if (esta(cuasi, "NumberChildrenAtHome")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(11));
-            } else {
-                csvOutput.write(csv_import.get(11));
-            }
-            if (esta(cuasi, "EnglishEducation")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(12));
-            } else {
-                csvOutput.write(csv_import.get(12));
-            }
-            if (esta(cuasi, "EnglishOccupation")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(13));
-            } else {
-                csvOutput.write(csv_import.get(13));
-            }
-            if (esta(cuasi, "HouseOwnerFlag")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(14));
-            } else {
-                csvOutput.write(csv_import.get(14));
-            }
-            if (esta(cuasi, "NumberCarsOwned")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(15));
-            } else {
-                csvOutput.write(csv_import.get(15));
-            }
-            if (esta(cuasi, "DateFirstPurchase")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(16));
-            } else {
-                csvOutput.write(csv_import.get(16));
-            }
-            if (esta(cuasi, "CommuteDistance")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(17));
-            } else {
-                csvOutput.write(csv_import.get(17));
-            }
-            if (esta(cuasi, "Region")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(18));
-            } else {
-                csvOutput.write(csv_import.get(18));
-            }
-            if (esta(cuasi, "Age ")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(19));
-            } else {
-                csvOutput.write(csv_import.get(19));
-            }
-            if (esta(cuasi, "BikeBuyer ")) {
-                csvOutput.write((centroids.instance(assignments[i])).toString(20));
-            } else {
-                csvOutput.write(csv_import.get(20));
-            }
 
+            for(int k = 0; k < csv_import.getColumnCount(); k++){
+                if(enteroEnLista(cuasi,k)){
+                    csvOutput.write((centroids.instance(assignments[i])).toString(k));
+                    tableModel.setValueAt((centroids.instance(assignments[i])).toString(k), i, k);
+                    
+                }else{
+                    csvOutput.write(csv_import.get(k));
+                }
+            }
             csvOutput.endRecord();
             i++;
         }
-
         csv_import.close();
-
+        File fichero = new File("dateBeforeFilter4Temp.csv");
+        fichero.delete();
+        tableModel.fireTableDataChanged();
     }
+
+     /**
+    * Este metodo valida si un numero dado esta incluido en una lista de cadenas de caracteres
+    * @param: lista, es una lista de cadenas de caracteres y en ella se va a buscar un numero
+    * @param: numero, es un entero y se desea saber si esta incluido en una lista
+    * @return: boolean, true si el parametro 'numero' fue encontrado en el parametro 'lista'
+    */
+    public boolean enteroEnLista(List<String> lista, int numero) {
+            for (String p : lista) {
+                    if (Integer.parseInt(p) == numero) {
+                            return true;
+                    }
+            }
+            return false;
+    }
+
 
     /**
      * This method contains all the logic to generate output CSV files
