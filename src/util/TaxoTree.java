@@ -14,8 +14,11 @@ import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
 
 /**
+ * This class implements a MutableTreeNode used as a TreeModel for the JTree
+ * Swing component, including extra methods for tree building and traversal.
  *
  * @author davl3232
+ * @param <T> Type of the data inside each node.
  */
 public class TaxoTree<T> implements MutableTreeNode {
 
@@ -23,22 +26,37 @@ public class TaxoTree<T> implements MutableTreeNode {
 	private TaxoTree<T> parent;
 	private List<TaxoTree<T>> children;
 
+	/**
+	 * Empty tree node constructor.
+	 */
 	public TaxoTree() {
 		this.parent = null;
 		this.data = null;
-		this.children = new ArrayList<TaxoTree<T>>();
+		this.children = new ArrayList<>();
 	}
 
+	/**
+	 * Constructor for tree node with data.
+	 * 
+	 * @param rootData data for the root node.
+	 */
 	public TaxoTree(T rootData) {
 		this.parent = null;
 		this.data = rootData;
-		this.children = new ArrayList<TaxoTree<T>>();
+		this.children = new ArrayList<>();
 	}
 
+	/**
+	 * Constructor for tree node with data, attaches the node to the parent.
+	 * 
+	 * @param data data for leaf node.
+	 * @param parent parent to attach to.
+	 */
 	public TaxoTree(T data, TaxoTree<T> parent) {
 		this.parent = parent;
 		this.data = data;
-		this.children = new ArrayList<TaxoTree<T>>();
+		this.parent.addChild(this);
+		this.children = new ArrayList<>();
 	}
 
 	private TaxoTree<T> getParentAtHeight(int currH, int h) {
@@ -48,11 +66,23 @@ public class TaxoTree<T> implements MutableTreeNode {
 		return this.parent.getParentAtHeight(currH + 1, h);
 	}
 
+	/**
+	 * Finds the parent of this tree node that is at the given tree height.
+	 * 
+	 * @param h the target tree height.
+	 * @return tree node found at the given height.
+	 */
 	public TaxoTree<T> getParentAtHeight(int h) {
 		int currH = this.getHeight();
 		return this.getParentAtHeight(currH, h);
 	}
 
+	/**
+	 * Searches the node that has the given value as data, inside this sub-tree.
+	 * 
+	 * @param d the data to be found.
+	 * @return if found, the tree node that was found, null otherwise.
+	 */
 	public TaxoTree<T> find(T d) {
 		if (d == null) {
 			return null;
@@ -70,6 +100,11 @@ public class TaxoTree<T> implements MutableTreeNode {
 		return t;
 	}
 
+	/**
+	 * Obtain the height of this node in the tree.
+	 * 
+	 * @return integer with the height of this node.
+	 */
 	public int getHeight() {
 		int maxHeight = 0;
 		for (int i = 0; i < this.children.size(); ++i) {
@@ -81,6 +116,11 @@ public class TaxoTree<T> implements MutableTreeNode {
 		return 1 + maxHeight;
 	}
 
+	/**
+	 * Obtains the level at which this tree node is inside the whole tree.
+	 * 
+	 * @return the level at which this tree node is.
+	 */
 	public int getLevel() {
 		if (this.parent == null) {
 			return 0;
@@ -88,6 +128,13 @@ public class TaxoTree<T> implements MutableTreeNode {
 		return 1 + this.parent.getLevel();
 	}
 
+	/**
+	 * Searches this sub-tree for a node with the given data and obtains its
+	 * level.
+	 * 
+	 * @param data the data to be found.
+	 * @return the level at which the data was found inside this subtree.
+	 */
 	public int getLevelOf(T data) {
 		int level = 0;
 		if (this.data.equals(data)) {
@@ -109,6 +156,12 @@ public class TaxoTree<T> implements MutableTreeNode {
 		}
 	}
 
+	/**
+	 * Builds this sub-tree from a lineage.
+	 * 
+	 * @param lineage list of linear descentants data objects including
+	 * this(e.g. [this, child, grandchild, grandgrandchild, ...]).
+	 */
 	public void buildFromLineage(List<T> lineage) {
 		T d = lineage.get(lineage.size() - 1);
 		lineage.remove(lineage.size() - 1);
@@ -119,6 +172,11 @@ public class TaxoTree<T> implements MutableTreeNode {
 		this.addLineage(lineage);
 	}
 
+	/**
+	 * Adds a lineage to this sub-tree.
+	 * 
+	 * @param lineage list of linear descentants data objects without this(e.g. [child, grandchild, grandgrandchild, ...]).
+	 */
 	public void addLineage(List<T> lineage) {
 		if (lineage.isEmpty()) {
 			return;
@@ -132,20 +190,35 @@ public class TaxoTree<T> implements MutableTreeNode {
 			}
 		}
 		if (c == null) {
-			c = new TaxoTree<T>(d, this);
+			c = new TaxoTree<>(d, this);
 			this.children.add(c);
 		}
 		c.addLineage(lineage);
 	}
 
+	/**
+	 * Creates and adds a child with the given data to this sub-tree.
+	 * 
+	 * @param data the data for the child node.
+	 */
 	public void addChild(T data) {
-		TaxoTree<T> child = new TaxoTree<T>(data, this);
-		this.children.add(child);
+		TaxoTree<T> child = new TaxoTree<>(data, this);
 	}
+
+	/**
+	 * Adds the given sub-tree as a child of this sub-tree.
+	 * 
+	 * @param c the child to be added.
+	 */
 	public void addChild(TaxoTree<T> c) {
 		this.children.add(c);
 	}
 
+	/**
+	 * Adds all sub-trees in the given collection as children in this sub-tree.
+	 *
+	 * @param c the children collection.
+	 */
 	public void addChildren(Collection<? extends TaxoTree<T>> c) {
 		this.children.addAll(c);
 	}
@@ -158,6 +231,7 @@ public class TaxoTree<T> implements MutableTreeNode {
 		this.data = data;
 	}
 
+	@Override
 	public TaxoTree<T> getParent() {
 		return parent;
 	}
@@ -174,6 +248,11 @@ public class TaxoTree<T> implements MutableTreeNode {
 		this.children = children;
 	}
 
+	/**
+	 * Converts to string using tabs to indicate tree levels.
+	 * 
+	 * @return a string with tabs representing tree levels
+	 */
 	public String toStringRecursive() {
 		int l = this.getLevel();
 		System.out.println(l);
